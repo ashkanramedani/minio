@@ -16,7 +16,7 @@ except Exception as e:
     raise SystemExit("Failed to start the application due to connection issues.")
 
 app = FastAPI(
-    title=settings.API_NANE,
+    title=settings.API_NAME,
     version=settings.VERSION
 )
 
