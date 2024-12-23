@@ -1,29 +1,35 @@
 from pydantic import BaseSettings
+import os
 
 class Settings(BaseSettings):
-    API_NANE: str = "FastAPI MinIO Service"
-    API_KEY: str = ""
-    ADMIN_API_KEY: str = ""
-    VERSION: str = "0.1.0-beta"
+    API_NAME: str = os.getenv("API_NAME")
+    API_KEY: str = os.getenv("API_KEY")
+    ADMIN_API_KEY: str = os.getenv("ADMIN_API_KEY")
+    VERSION: str = os.getenv("VERSION")
 
-    DATABASE_URL: str = ""
-    POSTGRES_HOST: str = ""
-    POSTGRES_PORT: int = 5432
-    POSTGRES_USER: str = ""
-    POSTGRES_PASSWORD: str = ""
-    POSTGRES_DB: str = "test"
+    DATABASE_URL: str = os.getenv("DATABASE_URL")
+    POSTGRES_HOST: str = os.getenv("POSTGRES_HOST")
+    POSTGRES_PORT: int = os.getenv("POSTGRES_PORT")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD")
+    POSTGRES_DB: str = os.getenv("POSTGRES_DB")
 
-    MINIO_URL: str = ""
-    MINIO_ACCESS_KEY: str = ""
-    MINIO_SECRET_KEY: str = ""
+    MINIO_URL: str = os.getenv("MINIO_URL")
+    MINIO_ACCESS_KEY: str = os.getenv("MINIO_ACCESS_KEY")
+    MINIO_SECRET_KEY: str = os.getenv("MINIO_SECRET_KEY")
 
-    REDIS_API_BASE: str = ""    
-    REDIS_PASSWORD: str = ""
-    REDIS_HOST: str = ""
-    REDIS_PORT: int = 6379
-    REDIS_DB_INDEX: int = 0
+    REDIS_API_BASE: str = os.getenv("REDIS_API_BASE")
+    REDIS_PASSWORD: str = os.getenv("REDIS_PASSWORD")
+    REDIS_HOST: str = os.getenv("REDIS_HOST")
+    REDIS_PORT: int = os.getenv("REDIS_PORT")
+    REDIS_DB_INDEX: int = os.getenv("REDIS_DB_INDEX")
 
+    class Config:
+        env_file = ".env"  # مشخص‌کردن نام فایل env
+
+# ایجاد نمونه از تنظیمات
 settings = Settings()
+
 
 
 
