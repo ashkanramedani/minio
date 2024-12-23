@@ -1,0 +1,3 @@
+cd /e/Work\ Pro/ieltsdaily/Code/minio/app;
+uvicorn main:app ;
+uvicorn main:app --reload;

@@ -1,0 +1,1039 @@
+2024-12-22 17:28:24,570 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:28:59,108 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:28:59,108 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 17:30:19,064 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:30:19,064 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 17:30:28,012 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:30:28,012 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 17:30:57,245 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:31:19,462 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:52:37,713 - FastAPIApp - INFO - Starting application...
+2024-12-22 17:52:37,795 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 17:52:37,936 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 17:52:37,937 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:17:39,564 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:17:39,636 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:17:39,786 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:17:39,786 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:17:48,976 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:17:49,045 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:17:49,212 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:17:49,212 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:18:10,661 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:18:10,739 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:18:10,899 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:18:10,899 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:18:21,790 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:18:21,860 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:18:22,066 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:18:22,066 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:19:47,794 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:19:47,865 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:19:48,056 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:19:48,056 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:19:50,872 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:19:50,969 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:19:51,194 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:19:51,195 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:19:55,591 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:19:55,665 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:19:55,834 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:19:55,834 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:20:12,577 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:20:12,633 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:20:12,826 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:20:12,827 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:20:18,370 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:20:18,447 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:20:18,600 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:20:18,600 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:21:20,621 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:21:20,695 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:21:20,859 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:21:20,859 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:22:12,784 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:22:12,866 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:22:13,043 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:22:13,043 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:22:25,896 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:22:25,989 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:22:26,194 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:22:26,194 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:22:38,051 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:22:38,112 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:22:38,298 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:22:38,298 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:22:45,956 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:22:46,010 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:22:46,173 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:22:46,173 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:27:51,710 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:27:51,796 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:27:52,004 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:27:52,004 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:32:33,150 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:32:33,215 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:32:33,395 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:32:33,395 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:33:44,384 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:33:44,531 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:33:44,768 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:33:44,768 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:36:00,750 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:36:00,880 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:36:01,037 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:36:01,038 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 18:38:33,153 - FastAPIApp - INFO - Starting application...
+2024-12-22 18:38:33,243 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 18:38:33,408 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 18:38:33,408 - FastAPIApp - INFO - Creating database tables...
+2024-12-22 18:38:33,788 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-22 18:38:33,788 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 23:49:58,559 - FastAPIApp - INFO - Starting application...
+2024-12-22 23:49:58,621 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 23:49:58,770 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 23:49:58,770 - FastAPIApp - INFO - Creating database tables...
+2024-12-22 23:49:58,927 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-22 23:49:58,928 - FastAPIApp - INFO - Application started successfully.
+2024-12-22 23:53:47,431 - FastAPIApp - INFO - Starting application...
+2024-12-22 23:53:47,475 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-22 23:53:47,588 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-22 23:53:47,589 - FastAPIApp - INFO - Creating database tables...
+2024-12-22 23:53:47,720 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-22 23:53:47,720 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:02:30,190 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:02:30,255 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:02:30,402 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:02:30,402 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:02:30,523 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:02:30,523 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:02:48,089 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:02:48,230 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:02:48,552 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:02:48,553 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:02:48,972 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:02:48,972 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:07:54,380 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:07:54,425 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:07:54,518 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:07:54,518 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:07:54,727 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:07:54,728 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:08:29,436 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:08:29,483 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:08:29,578 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:08:29,578 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:08:29,693 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:08:29,693 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:09:19,665 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:09:19,710 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:09:19,821 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:09:19,822 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:09:19,953 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:09:19,953 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:30:28,489 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:30:28,539 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:30:28,662 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:30:28,662 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:30:28,772 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:30:28,772 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:32:21,392 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:32:21,447 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:32:21,587 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:32:21,587 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:32:21,742 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:32:21,742 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:45:46,419 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:45:46,465 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:45:46,571 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:45:46,571 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:45:46,697 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:45:46,697 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 00:47:16,403 - FastAPIApp - INFO - Starting application...
+2024-12-23 00:47:16,472 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 00:47:16,616 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 00:47:16,616 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 00:47:16,756 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 00:47:16,756 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:02:17,430 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:02:17,618 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:02:18,835 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:02:18,836 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:02:19,658 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:02:19,659 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:02:35,059 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:02:35,116 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:02:35,215 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:02:35,215 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:02:35,331 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:02:35,331 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:03:08,182 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:03:08,228 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:03:08,351 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:03:08,351 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:03:08,491 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:03:08,491 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:05:14,323 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:05:14,381 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:05:14,481 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:05:14,481 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:05:14,688 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:05:14,688 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:06:30,232 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:06:30,277 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:06:30,379 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:06:30,379 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:06:30,482 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:06:30,482 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:06:39,239 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:06:39,295 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:06:39,455 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:06:39,455 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:06:39,566 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:06:39,566 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:06:52,972 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:06:53,023 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:06:53,124 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:06:53,124 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:06:53,241 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:06:53,241 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:07:27,722 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:07:27,786 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:07:27,925 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:07:27,925 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:07:28,052 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:07:28,052 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:08:00,803 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:08:00,848 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:08:00,980 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:08:00,981 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:08:01,090 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:08:01,091 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:08:25,988 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:08:26,032 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:08:26,146 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:08:26,146 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:08:26,256 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:08:26,256 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:08:35,526 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:08:35,586 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:08:35,681 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:08:35,681 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:08:35,805 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:08:35,806 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:14:24,058 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:14:24,103 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:14:24,230 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:14:24,230 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:14:24,339 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:14:24,339 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:14:46,964 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:14:47,008 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:14:47,145 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:14:47,145 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:14:47,250 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:14:47,250 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:20:27,568 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:20:27,631 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:20:27,730 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:20:27,730 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:20:27,840 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:20:27,840 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:26:29,786 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:26:29,832 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:26:29,950 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:26:29,950 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:26:30,060 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:26:30,060 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:26:50,702 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:26:50,747 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:26:50,854 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:26:50,854 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:26:50,973 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:26:50,974 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:28:38,036 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:28:38,100 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:28:38,209 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:28:38,209 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:28:38,333 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:28:38,334 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:29:13,672 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:29:13,717 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:29:13,844 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:29:13,844 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:29:13,954 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:29:13,955 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:29:15,592 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:29:15,659 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:29:15,773 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:29:15,773 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:29:15,905 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:29:15,905 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:29:30,581 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:29:30,640 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:29:30,754 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:29:30,754 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:29:30,993 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:29:30,994 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:32:18,601 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:32:18,659 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:32:18,754 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:32:18,754 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:32:18,864 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:32:18,864 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:14,263 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:34:14,320 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:34:14,431 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:34:14,431 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:34:14,549 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:34:14,550 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:19,031 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:34:19,089 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:34:19,179 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:34:19,179 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:34:19,290 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:34:19,291 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:26,630 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:34:26,687 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:34:26,809 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:34:26,809 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:34:26,924 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:34:26,924 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:31,982 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:34:32,039 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:34:32,154 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:34:32,154 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:34:32,273 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:34:32,274 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:49,352 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:34:49,410 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:34:49,548 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:34:49,548 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:34:49,663 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:34:49,663 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:34:53,783 - FastAPIApp - INFO - 1
+2024-12-23 01:34:53,784 - FastAPIApp - INFO - 2
+2024-12-23 01:34:54,009 - FastAPIApp - INFO - 3
+2024-12-23 01:35:16,931 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:35:16,991 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:35:17,119 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:35:17,119 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:35:17,253 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:35:17,254 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:35:18,037 - FastAPIApp - INFO - 1
+2024-12-23 01:35:18,039 - FastAPIApp - INFO - 2
+2024-12-23 01:35:18,245 - FastAPIApp - INFO - 3
+2024-12-23 01:35:18,245 - FastAPIApp - INFO - 4
+2024-12-23 01:38:52,126 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:38:52,184 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:38:52,279 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:38:52,279 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:38:52,494 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:38:52,494 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:42:06,346 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:42:06,404 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:42:06,533 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:42:06,533 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:42:06,745 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:42:06,745 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:42:46,571 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:42:46,615 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:42:46,714 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:42:46,714 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:42:46,825 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:42:46,825 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:43:00,521 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:43:00,565 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:43:00,658 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:43:00,659 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:43:00,779 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:43:00,779 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:43:18,815 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:43:18,861 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:43:18,968 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:43:18,968 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:43:19,113 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:43:19,113 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:44:26,426 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:44:26,470 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:44:26,569 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:44:26,569 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:44:26,699 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:44:26,699 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:44:51,402 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:44:51,451 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:44:51,623 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:44:51,624 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:44:51,940 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:44:51,941 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:47:03,476 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:47:03,534 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:47:03,649 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:47:03,649 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:47:03,775 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:47:03,775 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:47:22,968 - FastAPIApp - INFO - c988174d-b7d9-40bd-bbc8-1b3eaf73465ewebp
+2024-12-23 01:47:50,895 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:47:50,944 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:47:51,056 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:47:51,056 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:47:51,163 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:47:51,163 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:48:34,526 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:48:34,570 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:48:34,664 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:48:34,664 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:48:34,774 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:48:34,774 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:48:36,661 - FastAPIApp - INFO - 1927b936-30c4-43d9-ac4c-f6b1d87611ae.webp
+2024-12-23 01:48:36,926 - FastAPIApp - INFO - 12
+2024-12-23 01:49:32,671 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:49:32,716 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:49:32,809 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:49:32,809 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:49:32,918 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:49:32,918 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:49:52,581 - FastAPIApp - INFO - 44930d5c-c70e-4885-8fb0-e7a4a00f8e17.webp
+2024-12-23 01:55:46,650 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:55:46,701 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:55:46,792 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:55:46,793 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:55:46,912 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:55:46,912 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:56:10,636 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:56:10,682 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:56:10,779 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:56:10,779 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:56:10,889 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:56:10,889 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:56:47,145 - FastAPIApp - INFO - Starting application...
+2024-12-23 01:56:47,204 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 01:56:47,322 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 01:56:47,323 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 01:56:47,430 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 01:56:47,431 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 01:56:54,033 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 01:56:54,224 - FastAPIApp - INFO - Uploading file to MinIO: fbb14ea3-63bc-40eb-8689-ada828c739cb.webp
+2024-12-23 01:56:54,489 - FastAPIApp - ERROR - Upload to MinIO failed: 'NoneType' object has no attribute 'version_id'
+2024-12-23 01:56:54,573 - FastAPIApp - ERROR - Unexpected error occurred: 
+2024-12-23 02:00:08,669 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:00:08,715 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:00:08,819 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:00:08,819 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:00:08,943 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:00:08,944 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:00:10,926 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:00:10,969 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:00:11,069 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:00:11,069 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:00:11,192 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:00:11,192 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:01:28,280 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:01:28,325 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:01:28,447 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:01:28,447 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:01:28,597 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:01:28,597 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:02:52,074 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:02:52,121 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:02:52,243 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:02:52,244 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:02:52,347 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:02:52,348 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:03:12,787 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 02:03:13,029 - FastAPIApp - INFO - Uploading file to MinIO: aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp
+2024-12-23 02:03:13,369 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 02:05:18,675 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:05:18,720 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:05:18,822 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:05:18,822 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:05:18,938 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:05:18,938 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:05:49,177 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 02:05:49,273 - FastAPIApp - INFO - Uploading file to MinIO: aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp
+2024-12-23 02:05:49,664 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 02:08:20,779 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:08:20,831 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:08:20,971 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:08:20,971 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:08:21,083 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:08:21,083 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:08:41,190 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:08:41,253 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:08:41,403 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:08:41,403 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:08:41,532 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:08:41,533 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:09:11,938 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 02:09:12,050 - FastAPIApp - INFO - Uploading file to MinIO: aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp
+2024-12-23 02:09:12,355 - FastAPIApp - WARNING - Version ID is None. Check if versioning is enabled in the bucket.
+2024-12-23 02:09:12,509 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 02:11:07,780 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:11:07,825 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:11:07,917 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:11:07,917 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:11:08,038 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:11:08,038 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:13:24,816 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:13:24,876 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:13:24,968 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:13:24,968 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:13:25,088 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:13:25,089 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:15:41,936 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:15:41,993 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:15:42,103 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:15:42,103 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:15:42,259 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:15:42,259 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:16:08,225 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:16:08,269 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:16:08,378 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:16:08,378 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:16:08,488 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:16:08,488 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 02:19:01,060 - FastAPIApp - INFO - Starting application...
+2024-12-23 02:19:01,104 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 02:19:01,202 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 02:19:01,202 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 02:19:01,313 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 02:19:01,313 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:15:36,847 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:15:36,934 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:15:37,133 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:15:37,134 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:15:37,369 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:15:37,369 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:18:13,593 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:18:13,651 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:18:13,868 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:18:13,868 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:18:14,089 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:18:14,089 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:24:08,015 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:24:08,080 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:24:08,253 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:24:08,254 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:24:08,430 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:24:08,430 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:24:32,958 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:24:33,070 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:24:33,249 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:24:33,249 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:24:33,470 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:24:33,470 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:24:59,130 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:24:59,194 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:24:59,344 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:24:59,344 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:24:59,489 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:24:59,489 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:26:53,436 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:26:53,492 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:26:53,664 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:26:53,664 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:26:53,828 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:26:53,828 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:27:40,171 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:27:40,241 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:27:40,357 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:27:40,357 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:27:40,509 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:27:40,510 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 13:44:28,991 - FastAPIApp - INFO - Starting application...
+2024-12-23 13:44:29,067 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 13:44:29,277 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 13:44:29,277 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 13:44:29,461 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 13:44:29,461 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:03:51,875 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:03:52,041 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:03:52,405 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:03:52,405 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:03:53,055 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:03:53,056 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:03:59,750 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:03:59,872 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:04:00,152 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:04:00,152 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:04:13,661 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:04:13,661 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:04:47,179 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:04:47,426 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:04:47,917 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:04:47,917 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:04:48,266 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:04:48,266 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:05:07,899 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:05:08,006 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:05:08,204 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:05:08,205 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:05:08,543 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:05:08,543 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:05:21,919 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:05:22,002 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:05:22,152 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:05:22,152 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:05:22,341 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:05:22,341 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:06:02,758 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:06:02,890 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:06:03,052 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:06:03,053 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:06:03,222 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:06:03,222 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:06:27,303 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:06:27,436 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:06:27,566 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:06:27,566 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:06:27,718 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:06:27,719 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:12:12,178 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:12:12,252 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:12:12,431 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:12:12,432 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:12:12,609 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:12:12,609 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:12:45,711 - httpx - INFO - HTTP Request: POST http://185.112.32.51:8888/create "HTTP/1.1 200 OK"
+2024-12-23 14:13:01,015 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=6800270d-50ec-43c3-9522-62a6e9eba742&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:19:03,496 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=6800270d-50ec-43c3-9522-62a6e9eba742&db_index=0 "HTTP/1.1 502 Bad Gateway"
+2024-12-23 14:19:08,611 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=6800270d-50ec-43c3-9522-62a6e9eba742&db_index=0 "HTTP/1.1 502 Bad Gateway"
+2024-12-23 14:20:07,631 - httpx - INFO - HTTP Request: POST http://185.112.32.51:8888/create "HTTP/1.1 200 OK"
+2024-12-23 14:21:25,080 - urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001E56CED4670>: Failed to resolve 'minio.ieltsdailylms.com' ([Errno 11001] getaddrinfo failed)")': /
+2024-12-23 14:21:25,493 - urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001E56CED6E30>: Failed to resolve 'minio.ieltsdailylms.com' ([Errno 11001] getaddrinfo failed)")': /
+2024-12-23 14:21:27,032 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:21:27,106 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:21:27,294 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:21:27,294 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:21:27,481 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:21:27,482 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:21:31,054 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=5f042256-dd9a-41c3-8e6d-44440948de28&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:21:31,056 - FastAPIApp - INFO - {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:21:31,057 - FastAPIApp - INFO - "{'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}"
+2024-12-23 14:22:15,074 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:22:15,144 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:22:15,319 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:22:15,320 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:22:15,496 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:22:15,497 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:22:20,840 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=5f042256-dd9a-41c3-8e6d-44440948de28&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:22:20,843 - FastAPIApp - INFO - {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:22:20,843 - FastAPIApp - INFO - <class 'str'>
+2024-12-23 14:23:10,162 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:23:10,260 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:23:10,403 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:23:10,403 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:23:10,561 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:23:10,561 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:23:15,910 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=5f042256-dd9a-41c3-8e6d-44440948de28&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:23:15,912 - FastAPIApp - INFO - {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:23:15,912 - FastAPIApp - INFO - <class 'str'>
+2024-12-23 14:25:02,824 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:25:02,914 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:25:03,089 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:25:03,090 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:25:03,279 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:25:03,279 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:25:05,729 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=5f042256-dd9a-41c3-8e6d-44440948de28&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:25:05,732 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:25:24,601 - httpx - INFO - HTTP Request: POST http://185.112.32.51:8888/create "HTTP/1.1 200 OK"
+2024-12-23 14:25:32,740 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=59526938-bc80-4ab3-a637-9c388634b6be&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:25:32,743 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:25:53,732 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=59526938-bc80-4ab3-a637-9c388634b6be&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:25:53,734 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:28:00,363 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:28:00,440 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:28:00,609 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:28:00,610 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:28:00,833 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:28:00,833 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:28:07,481 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=59526938-bc80-4ab3-a637-9c388634b6be&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:28:07,484 - FastAPIApp - INFO - Raw session data from Redis: {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:28:07,484 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:28:11,641 - httpx - INFO - HTTP Request: POST http://185.112.32.51:8888/create "HTTP/1.1 200 OK"
+2024-12-23 14:28:24,980 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=dd3c4044-3694-4ebc-8160-689eaa3c55ba&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:28:24,983 - FastAPIApp - INFO - Raw session data from Redis: {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:28:24,984 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:29:21,394 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:29:21,465 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:29:21,634 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:29:21,634 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:29:21,819 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:29:21,820 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:29:25,582 - httpx - INFO - HTTP Request: POST http://185.112.32.51:8888/create "HTTP/1.1 200 OK"
+2024-12-23 14:29:34,690 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=8e39f409-62f9-4fec-bf43-bdf55bed4599&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:29:34,693 - FastAPIApp - INFO - Raw session data from Redis: {"file_key": "aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp", "bucket_name": "attachments"}
+2024-12-23 14:31:12,871 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:31:12,960 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:31:13,202 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:31:13,202 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:31:13,436 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:31:13,436 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:31:38,500 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=dd3c4044-3694-4ebc-8160-689eaa3c55ba&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:31:38,502 - FastAPIApp - INFO - Raw session data from Redis: {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:31:38,502 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:31:42,514 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=dd3c4044-3694-4ebc-8160-689eaa3c55ba&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:31:42,516 - FastAPIApp - INFO - Raw session data from Redis: {'file_key': 'aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp', 'bucket_name': 'attachments'}
+2024-12-23 14:31:42,517 - FastAPIApp - ERROR - Failed to decode Redis data
+2024-12-23 14:32:21,065 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=8e39f409-62f9-4fec-bf43-bdf55bed4599&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:32:21,067 - FastAPIApp - INFO - Raw session data from Redis: {"file_key": "aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp", "bucket_name": "attachments"}
+2024-12-23 14:33:41,910 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=8e39f409-62f9-4fec-bf43-bdf55bed4599&db_index=0 "HTTP/1.1 200 OK"
+2024-12-23 14:33:41,913 - FastAPIApp - INFO - Raw session data from Redis: {"file_key": "aa0432a3-cd3e-4b83-9ad0-98b1f6b63def.webp", "bucket_name": "attachments"}
+2024-12-23 14:34:29,442 - httpx - INFO - HTTP Request: GET http://185.112.32.51:8888/get?key=8e39f409-62f9-4fec-bf43-bdf55bed4599&db_index=0 "HTTP/1.1 500 Internal Server Error"
+2024-12-23 14:34:29,442 - FastAPIApp - ERROR - Unexpected error: Server error '500 Internal Server Error' for url 'http://185.112.32.51:8888/get?key=8e39f409-62f9-4fec-bf43-bdf55bed4599&db_index=0'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2024-12-23 14:38:24,363 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:38:24,453 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:38:24,672 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:38:24,672 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:38:24,877 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:38:24,877 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:41:09,692 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:41:09,784 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:41:09,939 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:41:09,939 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:41:10,202 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:41:10,202 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:42:48,483 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:42:48,548 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:42:48,705 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:42:48,705 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:42:48,957 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:42:48,958 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:44:45,852 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:44:45,922 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:44:46,094 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:44:46,096 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:44:46,248 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:44:46,249 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:49:13,916 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:49:13,973 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:49:14,147 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:49:14,147 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:49:14,312 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:49:14,312 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:50:56,643 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:50:56,719 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:50:56,932 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:50:56,932 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:50:57,147 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:50:57,147 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 14:51:30,943 - FastAPIApp - INFO - Starting application...
+2024-12-23 14:51:31,018 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 14:51:31,232 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 14:51:31,232 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 14:51:31,477 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 14:51:31,477 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:01:02,833 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:01:02,893 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:01:03,080 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:01:03,080 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:01:03,310 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:01:03,310 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:01:41,380 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 15:01:41,791 - FastAPIApp - INFO - Uploading file to MinIO: 2b932f51-e8f6-43b7-ad2c-364f63a32fe2.webp
+2024-12-23 15:01:43,610 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 15:04:12,171 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:04:12,248 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:04:12,447 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:04:12,447 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:04:12,634 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:04:12,634 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:04:19,764 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 15:04:20,174 - FastAPIApp - INFO - Uploading file to MinIO: 46a74ba2-6e87-4e06-99b0-3e7e1766fa82.webp
+2024-12-23 15:04:20,613 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 15:10:28,052 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:10:28,127 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:10:28,307 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:10:28,307 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:10:28,752 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:10:28,752 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:11:34,744 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:11:34,810 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:11:35,015 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:11:35,015 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:11:35,205 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:11:35,206 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:14:10,196 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:14:10,270 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:14:10,456 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:14:10,456 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:14:10,610 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:14:10,610 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:15:46,492 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:15:46,566 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:15:46,760 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:15:46,760 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:15:46,951 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:15:46,951 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:19:27,694 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:19:27,767 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:19:27,956 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:19:27,956 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:19:28,140 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:19:28,140 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:19:35,069 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:19:35,144 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:19:35,366 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:19:35,366 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:19:35,551 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:19:35,552 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:27:23,897 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:27:23,976 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:27:24,159 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:27:24,159 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:27:24,376 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:27:24,376 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:32:53,607 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:32:53,686 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:32:53,939 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:32:53,940 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:32:54,169 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:32:54,169 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:34:06,648 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:34:06,729 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:34:06,949 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:34:06,949 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:34:07,124 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:34:07,124 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:35:50,744 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:35:50,940 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:35:51,263 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:35:51,267 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:35:51,446 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:35:51,447 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:39:42,067 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:39:42,137 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:39:42,335 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:39:42,335 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:39:42,503 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:39:42,503 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:40:05,870 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:40:05,967 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:40:06,204 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:40:06,204 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:40:06,432 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:40:06,432 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:41:29,349 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:41:29,423 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:41:29,583 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:41:29,583 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:41:29,858 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:41:29,859 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:42:05,112 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:42:05,193 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:42:05,382 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:42:05,383 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:42:05,570 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:42:05,570 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:42:43,726 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:42:43,805 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:42:43,953 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:42:43,953 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:42:44,111 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:42:44,111 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:44:11,408 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:44:11,491 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:44:11,743 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:44:11,743 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:44:11,969 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:44:11,969 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:44:16,513 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:44:16,589 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:44:16,848 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:44:16,848 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:44:17,087 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:44:17,088 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:44:41,680 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:44:41,759 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:44:41,943 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:44:41,943 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:44:42,409 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:44:42,409 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:45:23,687 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:45:23,822 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:45:24,055 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:45:24,055 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:45:24,408 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:45:24,409 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:49:29,634 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:49:29,722 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:49:29,930 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:49:29,930 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:49:30,192 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:49:30,192 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 15:50:46,607 - FastAPIApp - INFO - Starting application...
+2024-12-23 15:50:46,678 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 15:50:46,857 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 15:50:46,857 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 15:50:47,063 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 15:50:47,064 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:04:37,881 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:04:37,963 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:04:38,182 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:04:38,182 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:04:38,372 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:04:38,372 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:08:38,076 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:08:38,152 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:08:38,333 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:08:38,333 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:08:38,491 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:08:38,492 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:09:49,349 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:09:49,418 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:09:49,593 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:09:49,593 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:09:49,811 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:09:49,812 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:09:52,611 - FastAPIApp - INFO - Bucket 'test2' created successfully
+2024-12-23 16:09:52,700 - FastAPIApp - INFO - Public policy set for bucket 'test2'
+2024-12-23 16:09:52,772 - FastAPIApp - INFO - Current policy for bucket 'test2': {"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":["*"]},"Action":["s3:GetObject"],"Resource":["arn:aws:s3:::test2/*"]}]}
+2024-12-23 16:09:52,773 - FastAPIApp - ERROR - Unexpected error: config must be VersioningConfig type
+2024-12-23 16:10:33,097 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:10:33,169 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:10:33,351 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:10:33,351 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:10:33,558 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:10:33,558 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:10:35,937 - FastAPIApp - ERROR - Unexpected error: 
+2024-12-23 16:11:51,152 - FastAPIApp - INFO - Bucket 'test3' created successfully
+2024-12-23 16:11:51,262 - FastAPIApp - INFO - Public policy set for bucket 'test3'
+2024-12-23 16:11:51,333 - FastAPIApp - INFO - Current policy for bucket 'test3': {"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":["*"]},"Action":["s3:GetObject"],"Resource":["arn:aws:s3:::test3/*"]}]}
+2024-12-23 16:11:51,333 - FastAPIApp - ERROR - Unexpected error: config must be VersioningConfig type
+2024-12-23 16:13:36,757 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:13:36,834 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:13:37,001 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:13:37,001 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:13:37,171 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:13:37,171 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:14:45,512 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:14:45,647 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:14:46,028 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:14:46,029 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:14:46,319 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:14:46,320 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:14:59,006 - FastAPIApp - INFO - Bucket 'test4' created successfully
+2024-12-23 16:14:59,166 - FastAPIApp - INFO - Public policy set for bucket 'test4'
+2024-12-23 16:14:59,326 - FastAPIApp - INFO - Versioning enabled for bucket 'test4'
+2024-12-23 16:15:56,195 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 16:15:56,619 - FastAPIApp - INFO - Uploading file to MinIO: 0f768c1d-af5a-4759-ac8c-5c4605b93e19.webp
+2024-12-23 16:15:58,182 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 16:17:58,348 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:17:58,424 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:17:58,610 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:17:58,610 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:17:58,817 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:17:58,817 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:18:01,532 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:18:01,608 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:18:01,836 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:18:01,836 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:18:02,005 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:18:02,006 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:18:20,734 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:18:20,822 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:18:21,018 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:18:21,018 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:18:21,240 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:18:21,241 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:18:44,125 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:18:44,205 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:18:44,438 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:18:44,438 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:18:44,706 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:18:44,706 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:22:34,075 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:22:34,155 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:22:34,345 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:22:34,345 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:22:34,552 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:22:34,552 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:22:48,120 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 16:22:48,704 - FastAPIApp - INFO - Uploading file to MinIO: 9c576533-3ea7-4a04-9b90-667d2e7213d5.webp
+2024-12-23 16:22:49,132 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 16:42:34,397 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:42:34,460 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:42:34,628 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:42:34,628 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:42:34,804 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:42:34,804 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 16:43:28,386 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 16:43:41,470 - FastAPIApp - INFO - Uploading file to MinIO: c5241eb2-8afa-40a0-aa1f-5a66561446ea.webp
+2024-12-23 16:43:41,470 - FastAPIApp - INFO - Processing image for format/resize
+2024-12-23 16:43:41,562 - FastAPIApp - INFO - Resizing image to width=250, height=100
+2024-12-23 16:43:41,570 - FastAPIApp - INFO - Converting image to format=jpg
+2024-12-23 16:43:41,570 - FastAPIApp - ERROR - Error processing image: 'JPG'
+2024-12-23 16:43:41,570 - FastAPIApp - ERROR - Upload to MinIO failed: 
+2024-12-23 16:43:41,708 - FastAPIApp - INFO - Removing file from MinIO: c5241eb2-8afa-40a0-aa1f-5a66561446ea.webp
+2024-12-23 16:43:43,033 - FastAPIApp - ERROR - Unexpected error occurred: 
+2024-12-23 16:45:23,159 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 16:45:23,694 - FastAPIApp - INFO - Uploading file to MinIO: fdf099b0-aee8-4d0f-96fa-f69d2d2077cb.webp
+2024-12-23 16:45:23,695 - FastAPIApp - INFO - Processing image for format/resize
+2024-12-23 16:45:23,695 - FastAPIApp - INFO - Resizing image to width=250, height=100
+2024-12-23 16:45:23,703 - FastAPIApp - INFO - Converting image to format=JPEG
+2024-12-23 16:45:31,844 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 16:48:39,013 - FastAPIApp - INFO - Starting application...
+2024-12-23 16:48:39,076 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 16:48:39,240 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 16:48:39,240 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 16:48:39,443 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 16:48:39,443 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 17:25:39,435 - FastAPIApp - INFO - Starting application...
+2024-12-23 17:25:39,512 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 17:25:39,708 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 17:25:39,708 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 17:25:39,901 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 17:25:39,901 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 17:42:13,005 - FastAPIApp - INFO - Starting application...
+2024-12-23 17:42:13,165 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 17:42:13,345 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 17:42:13,345 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 17:42:13,541 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 17:42:13,542 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 17:48:59,330 - FastAPIApp - INFO - Starting application...
+2024-12-23 17:48:59,394 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 17:48:59,555 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 17:48:59,555 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 17:48:59,721 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 17:48:59,721 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 17:53:48,314 - FastAPIApp - INFO - Starting application...
+2024-12-23 17:53:48,375 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 17:53:48,551 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 17:53:48,551 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 17:53:48,781 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 17:53:48,782 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 17:54:46,448 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 17:54:46,814 - FastAPIApp - INFO - Uploading file to MinIO: 1374fead-d4e2-4a6a-9d33-de1db6b76f10.m4a
+2024-12-23 17:55:17,683 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 18:17:33,329 - FastAPIApp - INFO - Starting application...
+2024-12-23 18:17:33,412 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 18:17:33,571 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 18:17:33,571 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 18:17:33,777 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 18:17:33,777 - FastAPIApp - INFO - Application started successfully.
+2024-12-23 18:54:06,126 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 18:54:06,167 - FastAPIApp - ERROR - Unexpected error occurred: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: INSERT INTO files (id, file_name, file_key, file_extension, bucket_name, file_type, file_size, download_count, public_url, created_at, user_id, version_id) VALUES (%(id)s, %(file_name)s, %(file_key)s, %(file_extension)s, %(bucket_name)s, %(file_type)s, %(file_size)s, %(download_count)s, %(public_url)s, %(created_at)s, %(user_id)s, %(version_id)s)]
+[parameters: {'id': UUID('98dbc448-656d-4199-b511-11b2526c02fb'), 'file_name': 'Frame.png', 'file_key': '', 'file_extension': 'png', 'bucket_name': 'attachments', 'file_type': 'image/png', 'file_size': 0, 'download_count': 0, 'public_url': '', 'created_at': datetime.datetime(2024, 12, 23, 15, 24, 6, 166897), 'user_id': '1', 'version_id': None}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2024-12-23 18:54:13,421 - FastAPIApp - INFO - Starting file upload process
+2024-12-23 18:54:14,161 - FastAPIApp - INFO - Uploading file to MinIO: 3b202a98-d2a9-4b09-b836-ec3f832bfa0e.png
+2024-12-23 18:54:15,941 - FastAPIApp - INFO - File uploaded successfully
+2024-12-23 18:55:09,524 - FastAPIApp - INFO - Starting application...
+2024-12-23 18:55:09,614 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 18:55:09,822 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 18:55:09,822 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 18:55:56,205 - FastAPIApp - INFO - Starting application...
+2024-12-23 18:55:56,284 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 18:55:56,487 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 18:55:56,488 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 18:57:48,570 - FastAPIApp - INFO - Starting application...
+2024-12-23 18:57:48,664 - FastAPIApp - INFO - MinIO connection successful.
+2024-12-23 18:57:48,859 - FastAPIApp - INFO - PostgreSQL connection successful.
+2024-12-23 18:57:48,859 - FastAPIApp - INFO - Creating database tables...
+2024-12-23 18:57:49,246 - FastAPIApp - INFO - Database tables created successfully.
+2024-12-23 18:57:49,246 - FastAPIApp - INFO - Application started successfully.

@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'minio-api'
+    static_configs:
+      - targets: ['minio-api:8000']
+
+  - job_name: 'minio-db'
+    static_configs:
+      - targets: ['minio-db:9000']

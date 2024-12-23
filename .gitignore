@@ -1,0 +1,13 @@
+
+/data
+/api/.venv
+/api
+/app/.venv
+/app/__pycache__
+/app/dbs/__pycache__
+/app/configs/__pycache__
+/app/libs/__pycache__
+/app/models/__pycache__
+/app/routes/__pycache__
+/app/services/__pycache__
+/app/utils/__pycache__
