@@ -2,24 +2,24 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     API_NANE: str = "FastAPI MinIO Service"
-    API_KEY: str = "42k6LXj8ATdznqs"
-    ADMIN_API_KEY: str = "admin_api_key_123"
+    API_KEY: str = ""
+    ADMIN_API_KEY: str = ""
     VERSION: str = "0.1.0-beta"
 
-    DATABASE_URL: str = "postgresql://ieltsdaily:AliBig+Hi@185.112.32.51:15432/test"
-    POSTGRES_HOST: str = "185.112.32.51"
-    POSTGRES_PORT: int = 15432
-    POSTGRES_USER: str = "ieltsdaily"
-    POSTGRES_PASSWORD: str = "AliBig+Hi"
+    DATABASE_URL: str = ""
+    POSTGRES_HOST: str = ""
+    POSTGRES_PORT: int = 5432
+    POSTGRES_USER: str = ""
+    POSTGRES_PASSWORD: str = ""
     POSTGRES_DB: str = "test"
 
-    MINIO_URL: str = "http://minio.ieltsdailylms.com:9001"
-    MINIO_ACCESS_KEY: str = "b6gHWF9yW1VtHe7pTUJx"
-    MINIO_SECRET_KEY: str = "gFbzLYhW7GtTQiOWgvgvQO1SioFvDKCPNJgY0r5g"
+    MINIO_URL: str = ""
+    MINIO_ACCESS_KEY: str = ""
+    MINIO_SECRET_KEY: str = ""
 
-    REDIS_API_BASE: str = "http://185.112.32.51:8888"    
-    REDIS_PASSWORD: str = "eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81HBSDsdkjgasdj"
-    REDIS_HOST: str = "redis-db"
+    REDIS_API_BASE: str = ""    
+    REDIS_PASSWORD: str = ""
+    REDIS_HOST: str = ""
     REDIS_PORT: int = 6379
     REDIS_DB_INDEX: int = 0
 
