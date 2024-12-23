@@ -13,3 +13,4 @@
 /app/utils/__pycache__
 *.log
 app/api.log
+app/configs/config.py
