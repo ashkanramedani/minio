@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  minio:
+    image: quay.io/minio/minio:RELEASE.2024-11-07T00-52-20Z
+    container_name: minio-db
+    restart: always
+    ports:
+      - "${MINIO_PORT_API}:9000"
+      - "${MINIO_PORT_WEBUI}:9001"
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}      
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.minio-db.rule=Host(`minio-db`)"
+      - "traefik.http.services.minio-db.loadbalancer.server.port=${MINIO_PORT}"
+    volumes:
+      - ${MINIO_DATA_PATH}:/data
+      - ${MINIO_CONFIG_PATH}:/root/.minio
+    command: server /data --console-address ":9001"
+    networks:
+      - ieltsdaily
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://minio-db:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: minio-api
+    restart: always
+    ports:
+      - "${API_PORT}:8000"
+    environment:
+      - MINIO_ENDPOINT=minio-db
+      - MINIO_PORT=9000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.minio-api.rule=Host(`minio-api`)"
+      - "traefik.http.services.minio-api.loadbalancer.server.port=${API_PORT}"
+    depends_on:
+      - minio
+    volumes:
+      - ./app:/app
+    networks:
+      - ieltsdaily
+
+networks:
+  ieltsdaily:
+    external: true
+

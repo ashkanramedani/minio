@@ -1,0 +1,16 @@
+fastapi==0.99.0
+uvicorn==0.22.0
+sqlalchemy==1.4.49
+psycopg2-binary==2.9.6
+minio==7.1.14
+pydantic==1.10.7
+prometheus-fastapi-instrumentator==6.0.0
+prometheus_client==0.15.0
+redis==5.0.0
+fastapi-limiter==0.1.4
+python-multipart==0.0.6
+httpx
+pillow
+pydantic[dotenv]
+aioredis==2.0.1
+fastapi-versioning
