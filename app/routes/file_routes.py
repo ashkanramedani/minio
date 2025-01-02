@@ -28,6 +28,7 @@ from mimetypes import guess_type
 from PIL import Image
 from io import BytesIO
 from urllib.parse import quote
+import string
 
 file_router = APIRouter(prefix="/files")
 
@@ -62,12 +63,17 @@ def convert_folde_path_to_validate_path(folder_path: str):
         folder_path = folder_path[:-1]
     return folder_path
 
+
+
 @file_router.post("/create-path/{bucket_name}/{folder_path:path}", tags=["path"])
 def create_path(bucket_name: str, folder_path: str):
     folder_path = convert_folde_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=400, detail=f"folder path is not valid")
-
+    
+    if folder_path == 'root' or folder_path.startswith('root/'):
+        raise HTTPException(status_code=400, detail=f"you can't use 'root' in your path")
+    
     if not minio_client.bucket_exists(bucket_name):
         raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
     
@@ -82,6 +88,40 @@ def create_path(bucket_name: str, folder_path: str):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to create path: {str(e)}")
+    
+@file_router.delete("/delete-path/{bucket_name}/{folder_path:path}", tags=["path"])
+def delete_path(bucket_name: str, folder_path: str):
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=400, detail="Folder path is not valid")
+
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+
+    if not does_path_exist(bucket_name, folder_path):
+        raise HTTPException(status_code=404, detail=f"Path '{folder_path}' does not exist in bucket '{bucket_name}'")
+
+    try:
+        # لیست تمام آبجکت‌های موجود در مسیر
+        objects = list(minio_client.list_objects(bucket_name, prefix=f"{folder_path}/", recursive=False))
+
+        if not objects:  # مسیر کاملاً خالی است
+            minio_client.remove_object(bucket_name, folder_path)
+            return {"message": f"Path '{folder_path}' deleted successfully from bucket '{bucket_name}' as it was empty."}
+
+        # چک می‌کند که آیا فقط فایل `.dummy` در مسیر است
+        if len(objects) == 1 and objects[0].object_name == f"{folder_path}/.dummy":
+            minio_client.remove_object(bucket_name, objects[0].object_name)  # حذف فایل `.dummy`
+            minio_client.remove_object(bucket_name, folder_path)  # حذف مسیر
+            return {"message": f"Path '{folder_path}' and file '.dummy' deleted successfully from bucket '{bucket_name}'."}
+
+        # اگر مسیر شامل فایل‌های دیگری نیز بود
+        raise HTTPException(status_code=400, detail=f"Path '{folder_path}' is not empty and cannot be deleted.")
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to delete path: {str(e)}")
+
 
 
 @file_router.post("/upload/{bucket_name}/{folder_path:path}", tags=["upload"])
@@ -118,10 +158,6 @@ def upload_file(
         if not file_extension:
             logger.warning("File extension is missing")
 
-        # بررسی وجود باکت
-        if not minio_client.bucket_exists(bucket_name):
-            raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
-        
         # شناسایی نوع فایل
         mime_type, _ = guess_type(file.filename)
         file_type = mime_type.split('/')[0] if mime_type else None
@@ -211,7 +247,7 @@ def upload_file(
             
             file.file.seek(0)
 
-            public_url = f"{request.base_url}files/download/public-url/{bucket_name}"
+            public_url = f"{request.base_url}files/download/public-url/{bucket_name}/{folder_path if folder_path != '' else 'root'}"
 
             if current_file_id: 
                 public_url += f"/{current_file_id}"
@@ -219,14 +255,8 @@ def upload_file(
             else: 
                 public_url += f"/{new_file.id}"
 
-            q_param = False
             if version_id: 
                 public_url += f"?version_id={version_id}"
-                q_param=True
-
-            if folder_path:                
-                public_url += "&" if q_param else "?"
-                public_url += f"folder_path={folder_path}"
 
             if existing_file:
                 existing_file.file_name = file.filename
@@ -378,6 +408,7 @@ def upload_multiple_files(
         "message": "Files uploaded successfully",
         "uploaded_files": uploaded_files
     }
+
 
 
 @file_router.get("/buckets", tags=["buckets"])
@@ -571,35 +602,48 @@ async def get_objects_in_bucket(bucket_name: str, folder_path: str, db: Session 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error retrieving objects from folder '{folder_path}' in bucket '{bucket_name}': {str(e)}")
 
-@file_router.delete("/objects/{bucket_name}/{object_name}", tags=["objects"])
-def delete_object(bucket_name: str, object_name: str, user_id: str, db: Session = Depends(get_db)):
+@file_router.delete("/objects/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["objects"])
+def delete_object(bucket_name: str, folder_path: str, current_file_id: str, user_id: str, db: Session = Depends(get_db)):
     """
-    Delete an object from MinIO and the database (only if the creator user_id matches).
-    """
+    Delete an object from a specific path in MinIO and the database (only if the creator user_id matches).
+    """    
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"folder path is not valid")   
+    
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+    
+    if bucket_name in ignoree_list_delete_object_bucket:
+        raise HTTPException(status_code=400, detail="شما مجاز به حذف هیچ فایلی از این باکت نیستید")
+        
+    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+    
     try:
-        if bucket_name in ignoree_list_delete_object_bucket:
-            raise HTTPException(status_code=400, detail="شما مجاز به حذف  هیچ فایلی از این باکت نیستید")
-        # جستجوی رکورد در دیتابیس
-        file_record = db.query(FileModel).filter(
-            FileModel.bucket_name == bucket_name,
-            FileModel.file_key== object_name
+        existing_file = db.query(FileModel).filter(
+            FileModel.bucket_name == bucket_name and  
+            FileModel.id == current_file_id and 
+            FileModel.folder_path == folder_path
         ).first()
-
-        if not file_record:
-            raise HTTPException(status_code=404, detail="Object not found in database")
+        if not existing_file:
+             raise HTTPException(status_code=404, detail="Object not found in database")
+        
+        # Combine folder path and object name to get full object key
+        full_object_key = f"{folder_path}/{existing_file.file_key}" if folder_path else existing_file.file_key
 
         # بررسی تطابق user_id
-        if file_record.user_id != user_id:
+        if existing_file.user_id != user_id:
             raise HTTPException(status_code=403, detail="Permission denied: You can only delete your own objects")
 
         # حذف آبجکت از MinIO
         try:
-            minio_client.remove_object(bucket_name, object_name)
+            minio_client.remove_object(bucket_name, full_object_key)
         except S3Error as e:
             raise HTTPException(status_code=500, detail=f"Failed to remove object from MinIO: {str(e)}")
 
         # حذف رکورد از دیتابیس
-        db.delete(file_record)
+        db.delete(existing_file)
         db.commit()
 
         return {"message": "Object deleted successfully"}
@@ -610,46 +654,77 @@ def delete_object(bucket_name: str, object_name: str, user_id: str, db: Session 
 
 
 
-@file_router.get("/generate/minio-url/{bucket_name}/{current_file_id}", tags=["generate url"])
-def generate_presigned_url(bucket_name: str, current_file_id: str, expiry_seconds: int = 12, db: Session = Depends(get_db)):
+@file_router.get("/generate/minio-url/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["generate url"])
+def generate_presigned_url(bucket_name: str, folder_path: str, current_file_id: str, expiry_seconds: int = 12, db: Session = Depends(get_db)):
     """
-    تولید لینک موقت (Presigned URL) برای دانلود فایل.
+    تولید لینک موقت (Presigned URL) برای دانلود فایل از مسیر مشخص.
     """
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"folder path is not valid")   
+    
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+ 
+    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+    
     try:
         # محاسبه زمان انقضا به ثانیه
         expiry_seconds = timedelta(seconds=expiry_seconds)  # تبدیل به عدد صحیح برای ثانیه
+
+        existing_file = db.query(FileModel).filter(
+            FileModel.bucket_name == bucket_name and  
+            FileModel.id == current_file_id and 
+            FileModel.folder_path == folder_path
+        ).first()
         
-        existing_file = db.query(FileModel).filter(FileModel.id == current_file_id).first()
-        file_key = str(current_file_id) + (f".{existing_file.file_extension}" if existing_file.file_extension else "")
+        if not existing_file:
+            raise HTTPException(status_code=404, detail="File not found in database")
+
+        # Combine folder path and object name to get full object key
+        full_object_key = f"{folder_path}/{existing_file.file_key}" if folder_path else existing_file.file_key
 
         # تولید لینک موقت
-        presigned_url = minio_client.presigned_get_object(bucket_name, file_key, expires=expiry_seconds)
+        presigned_url = minio_client.presigned_get_object(bucket_name, full_object_key, expires=expiry_seconds)
 
         return {
             "message": "Presigned URL generated successfully",
             "bucket_name": bucket_name,
-            "file_key": file_key,
+            "folder_path": folder_path,
+            "file_key": existing_file.file_key,
             "presigned_url": presigned_url,
             "expires_in": expiry_seconds
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to generate presigned URL: {str(e)}")
 
-@file_router.get("/generate/api-url/{bucket_name}/{current_file_id}", tags=["generate url"])
+@file_router.get("/generate/api-url/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["generate url"])
 async def generate_presigned_url_with_redis(
-    bucket_name: str, current_file_id: str, expiry_seconds: int = None, db: Session = Depends(get_db), request: Request = None
+    bucket_name: str, folder_path: str, current_file_id: str, expiry_seconds: int = 12, db: Session = Depends(get_db), request: Request = None
 ):
     """
-    تولید لینک موقت (Presigned URL) برای دانلود فایل از طریق API با استفاده از Redis.
+    تولید لینک موقت (Presigned URL) برای دانلود فایل از مسیر مشخص از طریق API با استفاده از Redis.
     """
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"folder path is not valid")   
+    
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+ 
+    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+    
     try:
         # دریافت اطلاعات فایل از دیتابیس
-        existing_file = db.query(FileModel).filter(FileModel.id == current_file_id).first()
+        existing_file = db.query(FileModel).filter(            
+            FileModel.bucket_name == bucket_name and  
+            FileModel.id == current_file_id and 
+            FileModel.folder_path == folder_path
+        ).first()
         if not existing_file:
             raise HTTPException(status_code=404, detail="File not found in database")
-
-        # ساخت کلید فایل
-        file_key = str(current_file_id) + (f".{existing_file.file_extension}" if existing_file.file_extension else "")
 
         # ایجاد شناسه یکتا برای نشست دانلود
         session_id = str(uuid4())
@@ -657,8 +732,9 @@ async def generate_presigned_url_with_redis(
         # ذخیره اطلاعات در Redis
         session_data = {
             "current_file_id": current_file_id,
-            "file_key": file_key,
+            "file_key": existing_file.file_key,
             "bucket_name": bucket_name,
+            "folder_path": folder_path,
             "version_id": existing_file.version_id
         }
         session_data_encoded = json.dumps(session_data, ensure_ascii=False).encode("utf-8")
@@ -670,18 +746,21 @@ async def generate_presigned_url_with_redis(
         return {
             "message": "Presigned API URL generated successfully",
             "bucket_name": bucket_name,
-            "file_key": file_key,
+            "folder_path": folder_path,
+            "file_key": existing_file.file_key,
             "api_presigned_url": api_presigned_url,
             "expires_in": expiry_seconds
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to generate presigned API URL: {str(e)}")
+
     
     
 
-@file_router.get("/download/base64/{bucket_name}/{current_file_id}", tags=["download"])
+@file_router.get("/download/base64/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["download"])
 async def download_file_as_base64(
     bucket_name: str,
+    folder_path: str,
     current_file_id: str,
     version_id: str = None,
     width: int = None,
@@ -690,8 +769,18 @@ async def download_file_as_base64(
     db: Session = Depends(get_db),
 ):
     """
-    دانلود فایل از MinIO و بازگرداندن آن به فرمت Base64.
+    دانلود فایل از MinIO و بازگرداندن آن به فرمت Base64 از مسیر مشخص.
     """
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"folder path is not valid")   
+    
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+ 
+    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+    
     try:
         # ثبت لاگ درخواست
         log_request(
@@ -699,30 +788,35 @@ async def download_file_as_base64(
             file_id=current_file_id,
             ip_address=request.headers.get("x-forwarded-for", "127.0.0.1"),
             user_agent=request.headers.get("user-agent"),
-            project_name=request.headers.get("project-name"),  # فرض می‌کنیم پروژه را در هدر درخواست ارسال می‌کنید
+            project_name=request.headers.get("project-name"),
         )
+    except Exception as e:
+        logger.warning(e)
 
-        # بررسی اینکه آیا فایل موجود است
-        existing_file = db.query(FileModel).filter(
-            FileModel.id == current_file_id, FileModel.bucket_name == bucket_name
+    try:
+        # دریافت اطلاعات فایل از دیتابیس
+        existing_file = db.query(FileModel).filter(            
+            FileModel.bucket_name == bucket_name and  
+            FileModel.id == current_file_id and 
+            FileModel.folder_path == folder_path
         ).first()
         if not existing_file:
             raise HTTPException(status_code=404, detail="File not found in database")
 
-        # افزایش شمارش دانلود
-        existing_file.download_count += 1
-        db.commit()
 
-        # ساخت کلید فایل برای MinIO
-        file_key = f"{existing_file.id}.{existing_file.file_extension}" if existing_file.file_extension else str(existing_file.id)
+        # Combine folder path and object name to get full object key
+        full_object_key = f"{folder_path}/{existing_file.file_key}" if folder_path else existing_file.file_key
 
         # دریافت فایل از MinIO
         try:
-            response = minio_client.get_object(bucket_name, file_key, version_id=version_id)
+            if version_id:
+                response = minio_client.get_object(bucket_name, full_object_key, version_id=version_id)
+            else:
+                response = minio_client.get_object(bucket_name, full_object_key)
         except S3Error as e:
             logger.error(f"MinIO error: {e.code} - {e.message}")
             raise HTTPException(status_code=404, detail=f"MinIO error: {e.message}")
-        
+
         # اگر فایل یک تصویر باشد، تغییر اندازه انجام شود
         if existing_file.file_type.startswith("image/") and (width or height):
             try:
@@ -753,7 +847,10 @@ async def download_file_as_base64(
             # اگر تصویر نیست یا ابعاد داده نشده‌اند، به صورت معمولی به Base64 تبدیل شود
             base64_encoded_file = base64.b64encode(response.read()).decode("utf-8")
 
-        
+        # افزایش شمارش دانلود
+        existing_file.download_count += 1
+        db.commit()
+
         # بازگرداندن فایل به صورت Base64 همراه با اطلاعات
         return {
             "message": "File downloaded and converted to Base64 successfully",
@@ -763,6 +860,7 @@ async def download_file_as_base64(
             "file_type": existing_file.file_type,
             "file_extension": existing_file.file_extension,
             "bucket_name": bucket_name,
+            "folder_path": folder_path,
             "base64_data": f"data:{existing_file.file_type};base64,{base64_encoded_file}"
         }
 
@@ -771,9 +869,10 @@ async def download_file_as_base64(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
-@file_router.get("/download/public-url/{bucket_name}/{current_file_id}", tags=["download"])
+@file_router.get("/download/public-url/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["download"])
 async def download_file_through_api(
     bucket_name: str,
+    folder_path: str,
     current_file_id: str,
     version_id: str = None,
     width: int = None,
@@ -782,8 +881,20 @@ async def download_file_through_api(
     db: Session = Depends(get_db),
 ):
     """
-    دانلود فایل از MinIO به صورت واسطه (API به MinIO).
+    دانلود فایل از MinIO به صورت واسطه (API به MinIO) از مسیر مشخص.
     """
+    folder_path = convert_folde_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"folder path is not valid")  
+     
+    if folder_path == 'root':
+        folder_path = ''
+
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+ 
+    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
     try:
         # ثبت لاگ درخواست
         log_request(
@@ -791,22 +902,30 @@ async def download_file_through_api(
             file_id=current_file_id,
             ip_address=request.headers.get("x-forwarded-for", "127.0.0.1"),
             user_agent=request.headers.get("user-agent"),
-            project_name=request.headers.get("project-name"),  # فرض می‌کنیم پروژه را در هدر درخواست ارسال می‌کنید
+            project_name=request.headers.get("project-name"),
         )
+    except Exception as e:
+        logger.warning(e)
 
-        # بررسی اینکه آیا فایل موجود است
-        existing_file = db.query(FileModel).filter(
-            FileModel.id == current_file_id, FileModel.bucket_name == bucket_name
+    try:
+        # دریافت اطلاعات فایل از دیتابیس
+        existing_file = db.query(FileModel).filter(            
+            FileModel.bucket_name == bucket_name and  
+            FileModel.id == current_file_id and     
+            FileModel.folder_path == folder_path
         ).first()
         if not existing_file:
             raise HTTPException(status_code=404, detail="File not found in database")
 
-        # ساخت کلید فایل برای MinIO
-        file_key = f"{existing_file.id}.{existing_file.file_extension}" if existing_file.file_extension else str(existing_file.id)
+        # Combine folder path and object name to get full object key
+        full_object_key = f"{folder_path}/{existing_file.file_key}" if folder_path else existing_file.file_key
 
         # دریافت فایل از MinIO
         try:
-            response = minio_client.get_object(bucket_name, file_key, version_id=version_id)
+            if version_id:
+                response = minio_client.get_object(bucket_name, full_object_key, version_id=None)
+            else:
+                response = minio_client.get_object(bucket_name, full_object_key)
         except S3Error as e:
             logger.error(f"MinIO error: {e.code} - {e.message}")
             raise HTTPException(status_code=404, detail=f"MinIO error: {e.message}")
@@ -860,7 +979,7 @@ async def download_file_through_api(
         raise e  # انتقال خطای HTTPException به پاسخ کلاینت
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
-     
+    
 @file_router.get("/download/api-url/{session_id}", tags=["download"])
 async def download_file_with_redis(
     session_id: str,
@@ -930,7 +1049,10 @@ async def download_file_with_redis(
 
         # دریافت فایل از MinIO
         try:
-            response = minio_client.get_object(bucket_name, file_key, version_id=version_id)
+            if version_id:
+                response = minio_client.get_object(bucket_name, full_object_key, version_id=version_id)
+            else:
+                response = minio_client.get_object(bucket_name, full_object_key)
         except S3Error as e:
             logger.error(f"MinIO error: {e.code} - {e.message}")
             raise HTTPException(status_code=404, detail=f"MinIO error: {e.message}")
@@ -986,6 +1108,7 @@ async def download_file_with_redis(
         logger.error(f"Unexpected error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
+
 
 
 @file_router.get("/logs/{file_id}", tags=["logs"])
