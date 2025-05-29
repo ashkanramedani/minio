@@ -187,6 +187,7 @@ def upload_file(
             db.commit()
             db.refresh(new_file)
             file_key = str(new_file.id) + (f".{file_extension}" if file_extension else "")
+            current_file_id = new_file.id
 
         try:
             logger.info(f"Uploading file to MinIO: {file_key}")
@@ -247,7 +248,7 @@ def upload_file(
             
             file.file.seek(0)
 
-            public_url = f"{request.base_url}files/download/public-url/{bucket_name}/{folder_path if folder_path != '' else 'root'}"
+            public_url = f"https://file.ieltsdaily.ir/files/download/public-url"
 
             if current_file_id: 
                 public_url += f"/{current_file_id}"
@@ -587,6 +588,7 @@ async def get_objects_in_bucket(bucket_name: str, folder_path: str, db: Session 
                     "folder_name": folder_pathes[len(folder_pathes)-1],
                     "full_path": folder_path,
                     "file_name": file_name,
+                    "file_id": relative_path.split('.')[0] if '.' in relative_path else relative_path,
                     "file_key": relative_path,
                     "size": obj.get('size', -1),
                     "human_readable_size": human_readable_size(obj.get('size', -1)),
@@ -869,11 +871,12 @@ async def download_file_as_base64(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
-@file_router.get("/download/public-url/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["download"])
+# @file_router.get("/download/public-url/{bucket_name}/{folder_path:path}/{current_file_id}", tags=["download"])
+@file_router.get("/download/public-url/{current_file_id}", tags=["download"])
 async def download_file_through_api(
-    bucket_name: str,
-    folder_path: str,
     current_file_id: str,
+    bucket_name: str = None,
+    folder_path: str = None,
     version_id: str = None,
     width: int = None,
     height: int = None,
@@ -883,18 +886,16 @@ async def download_file_through_api(
     """
     دانلود فایل از MinIO به صورت واسطه (API به MinIO) از مسیر مشخص.
     """
+    logger.warning(1)
     folder_path = convert_folde_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")  
+    logger.warning(2)
      
     if folder_path == 'root':
         folder_path = ''
-
-    if not minio_client.bucket_exists(bucket_name):
-        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
- 
-    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
-        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+    logger.warning(3)
+    
     try:
         # ثبت لاگ درخواست
         log_request(
@@ -909,23 +910,30 @@ async def download_file_through_api(
 
     try:
         # دریافت اطلاعات فایل از دیتابیس
-        existing_file = db.query(FileModel).filter(            
-            FileModel.bucket_name == bucket_name and  
-            FileModel.id == current_file_id and     
-            FileModel.folder_path == folder_path
+        existing_file = db.query(FileModel).filter(      
+            FileModel.id == current_file_id      
         ).first()
+        
+        if not minio_client.bucket_exists(existing_file.bucket_name):
+            raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+        logger.warning(4)
+    
+        if not does_path_exist(existing_file.bucket_name, existing_file.folder_path) and existing_file.folder_path != "":
+            raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' have not exist this path '{folder_path}'")
+        logger.warning(5)
+
         if not existing_file:
             raise HTTPException(status_code=404, detail="File not found in database")
 
         # Combine folder path and object name to get full object key
-        full_object_key = f"{folder_path}/{existing_file.file_key}" if folder_path else existing_file.file_key
+        full_object_key = f"{existing_file.folder_path}/{existing_file.file_key}" if existing_file.folder_path else existing_file.file_key
 
         # دریافت فایل از MinIO
         try:
             if version_id:
-                response = minio_client.get_object(bucket_name, full_object_key, version_id=None)
+                response = minio_client.get_object(existing_file.bucket_name, full_object_key, version_id=version_id)
             else:
-                response = minio_client.get_object(bucket_name, full_object_key)
+                response = minio_client.get_object(existing_file.bucket_name, full_object_key)
         except S3Error as e:
             logger.error(f"MinIO error: {e.code} - {e.message}")
             raise HTTPException(status_code=404, detail=f"MinIO error: {e.message}")

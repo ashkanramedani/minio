@@ -19,6 +19,7 @@ except Exception as e:
     raise SystemExit("Failed to start the application due to connection issues.")
 
 app = FastAPI(
+    # root_path="/file",
     title=settings.API_NAME,
     version=settings.VERSION
 )
@@ -32,7 +33,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(file_router)
+app.include_router(file_router, prefix='/api/v1' )
 
 @app.on_event("startup")
 async def startup_event():

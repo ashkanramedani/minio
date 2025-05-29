@@ -24,6 +24,16 @@ class Settings(BaseSettings):
     REDIS_PORT: int = os.getenv("REDIS_PORT")
     REDIS_DB_INDEX: int = os.getenv("REDIS_DB_INDEX")
 
+    URL_WALLET: str = os.getenv("URL_WALLET")
+    URL_POST: str = os.getenv("URL_POST")
+    URL_ACCOUNTING: str = os.getenv("URL_ACCOUNTING")
+    URL_AUTHAPI: str = os.getenv("URL_AUTHAPI")
+    URL_FILE: str = os.getenv("URL_FILE")
+    URL_BBB: str = os.getenv("URL_BBB")
+    URL_CART: str = os.getenv("URL_CART")
+    URL_INVENTORY: str = os.getenv("URL_INVENTORY")
+    URL_PANEL: str = os.getenv("URL_PANEL")
+    
     class Config:
         env_file = ".env"  # مشخص‌کردن نام فایل env
 

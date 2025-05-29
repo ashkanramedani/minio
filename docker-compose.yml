@@ -30,7 +30,7 @@ services:
 
   api:
     build:
-      context: ./app
+      context: ./api
       dockerfile: Dockerfile
     container_name: minio-api
     restart: always
@@ -46,7 +46,7 @@ services:
     depends_on:
       - minio
     volumes:
-      - ./app:/app
+      - ./api:/app
     networks:
       - ieltsdaily
 
