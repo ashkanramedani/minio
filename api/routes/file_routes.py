@@ -1,8 +1,8 @@
 # app/routes/file_routes.py
-from fastapi import File, APIRouter, UploadFile, HTTPException, Depends, Request, Form
+from fastapi import File, APIRouter, UploadFile, HTTPException, Depends, Request, Form, Response
 from sqlalchemy.orm import Session
 from dbs import get_db, minio_client
-from typing import List
+from typing import List, Optional
 from utils import (
     upload_file_to_minio,
     list_buckets,
@@ -16,19 +16,20 @@ from utils import (
     stream_minio_object
 )
 from models import uuid4, FileModel, FileRequestLog
-from services import log_request
+from services import log_request, get_files
 from datetime import timedelta
 from fastapi.responses import StreamingResponse
 from minio.error import S3Error
 from minio.versioningconfig import VersioningConfig
 from libs import logger
 import base64
+from uuid import UUID
 import json
 from mimetypes import guess_type
 from PIL import Image
 from io import BytesIO
 from urllib.parse import quote
-import string
+from zipfile import ZipFile
 
 file_router = APIRouter(prefix="/files")
 
@@ -54,7 +55,7 @@ def folder_path_validat(folder_path: str):
         return False
     return True
 
-def convert_folde_path_to_validate_path(folder_path: str):
+def convert_folder_path_to_validate_path(folder_path: str):
     if folder_path == "/":
         folder_path = ""
     if folder_path and len(folder_path)>0 and folder_path[0] == "/":
@@ -67,7 +68,7 @@ def convert_folde_path_to_validate_path(folder_path: str):
 
 @file_router.post("/create-path/{bucket_name}/{folder_path:path}", tags=["path"])
 def create_path(bucket_name: str, folder_path: str):
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=400, detail=f"folder path is not valid")
     
@@ -91,7 +92,7 @@ def create_path(bucket_name: str, folder_path: str):
     
 @file_router.delete("/delete-path/{bucket_name}/{folder_path:path}", tags=["path"])
 def delete_path(bucket_name: str, folder_path: str):
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
 
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=400, detail="Folder path is not valid")
@@ -124,6 +125,107 @@ def delete_path(bucket_name: str, folder_path: str):
 
 
 
+@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"], summary="Upload multiple files to MinIO and record metadata")
+def upload_multiple_files(
+    bucket_name: str,
+    folder_path: str,
+    files: List[UploadFile] = File(...),
+    user_id: str = "00000000-0000-4b94-8e27-44833c2b940f",
+    db: Session = Depends(get_db),
+    request: Request = None,
+):
+    """
+    Upload multiple files to MinIO, save metadata in the database, and return upload results.
+    """
+    # Normalize and validate folder path
+    folder_path = convert_folder_path_to_validate_path(folder_path)
+    if not folder_path_validat(folder_path) and folder_path != "":
+        raise HTTPException(status_code=400, detail=f"Invalid folder path: '{folder_path}'")
+
+    # Validate bucket existence
+    if not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
+
+    # Validate folder path exists in bucket (if provided)
+    if folder_path and not does_path_exist(bucket_name, folder_path):
+        raise HTTPException(status_code=404, detail=f"Path '{folder_path}' does not exist in bucket '{bucket_name}'")
+
+    uploaded_files = []
+
+    for upload in files:
+        try:
+            filename = upload.filename
+            # Determine extension and type
+            extension = filename.rsplit('.', 1)[-1] if '.' in filename else None
+            if not extension:
+                logger.warning(f"File extension missing: {filename}")
+
+            mime_type = upload.content_type
+            # Create DB record
+            new_file = FileModel(
+                file_name=filename,
+                file_key="",
+                file_extension=extension,
+                bucket_name=bucket_name,
+                file_type=mime_type,
+                file_size=0,
+                folder_path=folder_path,
+                public_url="",
+                user_id=user_id
+            )
+            db.add(new_file)
+            db.commit()
+            db.refresh(new_file)
+
+            # Set object key and upload
+            file_key = f"{new_file.id}.{extension}" if extension else str(new_file.id)
+            # Upload to MinIO
+            result = upload_file_to_minio(bucket_name, folder_path, file_key, upload.file)
+            version_id = getattr(result, "version_id", None)
+
+            # Calculate file size
+            upload.file.seek(0, 2)
+            size = upload.file.tell()
+            if size <= 0:
+                raise HTTPException(status_code=400, detail="Invalid file size")
+            upload.file.seek(0)
+
+            # Construct public URL
+            base = request.base_url if request else ""
+            public_url = f"{base}files/download/public-url/{bucket_name}/{new_file.id}?folder_path={folder_path}"
+            if version_id:
+                public_url += f"&version_id={version_id}"
+
+            # Update DB record
+            new_file.file_key = file_key
+            new_file.file_size = size
+            new_file.public_url = public_url
+            new_file.version_id = version_id
+            db.commit()
+
+            uploaded_files.append({
+                "file_id": str(new_file.id),
+                "name": new_file.file_name,
+                "file_key": new_file.file_key,
+                "folder_path": new_file.folder_path,
+                "file_type": new_file.file_type,
+                "extension": new_file.file_extension,
+                "size": new_file.file_size,
+                "version_id": new_file.version_id,
+                "human_readable_size": human_readable_size(new_file.file_size),
+                "last_modified": new_file.created_at.isoformat(),
+                "etag": str(new_file.id),
+                "public_url": new_file.public_url
+            })
+        except HTTPException:
+            # Propagate HTTP errors
+            raise
+        except Exception as e:
+            logger.error(f"Failed to upload {filename}: {e}")
+            continue
+
+    return {"message": "Files uploaded successfully", "uploaded_files": uploaded_files}
+
 @file_router.post("/upload/{bucket_name}/{folder_path:path}", tags=["upload"])
 def upload_file(
     bucket_name: str,
@@ -141,7 +243,7 @@ def upload_file(
     Upload the file to MinIO and save the information in the database.
     """
     
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
 
@@ -313,103 +415,6 @@ def upload_file(
         logger.error(f"Unexpected error occurred: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"])
-def upload_multiple_files(
-    bucket_name: str,
-    folder_path: str,
-    files: List[UploadFile] = File(...),
-    user_id: str = "00000000-0000-4b94-8e27-44833c2b940f",
-    db: Session = Depends(get_db),
-    request: Request = None,
-):
-    """
-    آپلود چندین فایل به MinIO و ذخیره اطلاعات در دیتابیس.
-    """
-    folder_path = convert_folde_path_to_validate_path(folder_path)
-    if not folder_path_validat(folder_path) and folder_path != "":
-        raise HTTPException(status_code=404, detail=f"folder path is not valid")
-    
-    # بررسی وجود باکت
-    if not minio_client.bucket_exists(bucket_name):
-        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
-    
-    if not does_path_exist(bucket_name, folder_path) and folder_path != "":
-        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not contain this path '{folder_path}'")
-
-    uploaded_files = []
-
-    for file in files:
-        try:
-            file_extension = file.filename.split('.')[-1] if '.' in file.filename else None
-            if not file_extension:
-                logger.warning(f"File extension is missing for file: {file.filename}")
-
-            mime_type, _ = guess_type(file.filename)
-            file_type = mime_type.split('/')[0] if mime_type else None
-
-            new_file = FileModel(
-                file_name=file.filename,
-                file_key="",
-                file_extension=file_extension,
-                bucket_name=bucket_name,
-                file_type=file.content_type,
-                file_size=0,
-                folder_path=folder_path,
-                public_url="",
-                user_id=user_id
-            )
-            db.add(new_file)
-            db.commit()
-            db.refresh(new_file)
-
-            file_key = str(new_file.id) + (f".{file_extension}" if file_extension else "")
-
-            # آپلود فایل به MinIO
-            result = upload_file_to_minio(bucket_name, folder_path, file_key, file.file)
-            version_id = getattr(result, "version_id", None)
-
-            file_size = file.file.seek(0, 2)
-            if file_size <= 0:
-                logger.error(f"Invalid file size detected for file: {file.filename}")
-                raise HTTPException(status_code=400, detail="Invalid file size")
-
-            file.file.seek(0)
-
-            public_url = f"{request.base_url}files/download/public-url/{bucket_name}/{new_file.id}?folder_path={folder_path}"
-            if version_id:
-                public_url += f"&version_id={version_id}"
-
-            new_file.file_key = file_key
-            new_file.file_size = file_size
-            new_file.public_url = public_url
-            new_file.version_id = version_id
-            new_file.file_extension = file_extension
-            new_file.file_type = file.content_type
-            db.commit()
-            uploaded_files.append({
-                "file_id": str(new_file.id),
-                "name": new_file.file_name,
-                "file_key": new_file.file_key,
-                "folder_path": new_file.folder_path,
-                "file_type": new_file.file_type,
-                "extension": new_file.file_extension,
-                "size": new_file.file_size,
-                "version_id": new_file.version_id,
-                "human_readable_size": human_readable_size(new_file.file_size),
-                "last_modified": new_file.created_at.isoformat(),
-                "etag": new_file.id,
-                "public_url": public_url
-            })
-
-        except Exception as e:
-            logger.error(f"Failed to upload file: {file.filename}, Error: {str(e)}")
-            continue  # به جای توقف، فایل بعدی را پردازش کنید
-
-    return {
-        "message": "Files uploaded successfully",
-        "uploaded_files": uploaded_files
-    }
-
 
 
 @file_router.get("/buckets", tags=["buckets"])
@@ -532,7 +537,7 @@ async def get_objects_in_bucket(bucket_name: str, folder_path: str, db: Session 
     Get a list of objects in a bucket.
     """
     
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
 
@@ -609,7 +614,7 @@ def delete_object(bucket_name: str, folder_path: str, current_file_id: str, user
     """
     Delete an object from a specific path in MinIO and the database (only if the creator user_id matches).
     """    
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
     
@@ -661,7 +666,7 @@ def generate_presigned_url(bucket_name: str, folder_path: str, current_file_id: 
     """
     تولید لینک موقت (Presigned URL) برای دانلود فایل از مسیر مشخص.
     """
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
     
@@ -708,7 +713,7 @@ async def generate_presigned_url_with_redis(
     """
     تولید لینک موقت (Presigned URL) برای دانلود فایل از مسیر مشخص از طریق API با استفاده از Redis.
     """
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
     
@@ -773,7 +778,7 @@ async def download_file_as_base64(
     """
     دانلود فایل از MinIO و بازگرداندن آن به فرمت Base64 از مسیر مشخص.
     """
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   
     
@@ -887,7 +892,7 @@ async def download_file_through_api(
     دانلود فایل از MinIO به صورت واسطه (API به MinIO) از مسیر مشخص.
     """
     logger.warning(1)
-    folder_path = convert_folde_path_to_validate_path(folder_path)
+    folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")  
     logger.warning(2)
@@ -1116,9 +1121,45 @@ async def download_file_with_redis(
         logger.error(f"Unexpected error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
+@file_router.post("/download/zip-files", tags=["download"], summary="Zip files by IDs")
+async def zip_files_endpoint(
+    file_ids: List[UUID],
+    bucket_name: Optional[str] = None,
+    db: Session = Depends(get_db)
+):
+    # Validate bucket if provided
+    if bucket_name and not minio_client.bucket_exists(bucket_name):
+        raise HTTPException(status_code=404, detail=f"Bucket '{bucket_name}' does not exist")
 
+    # Fetch DB records, applying bucket filter
+    files = get_files(db, file_ids, bucket_name)
+    if not files:
+        raise HTTPException(status_code=404, detail="No files found matching criteria")
 
+    # Build ZIP in memory
+    zip_buffer = BytesIO()
+    with ZipFile(zip_buffer, "w") as zf:
+        for f in files:
+            full_key = f"{f.folder_path}/{f.file_key}" if hasattr(f, 'folder_path') and f.folder_path else f.file_key
+            try:
+                response = minio_client.get_object(f.bucket_name, full_key)
+                data = response.read()
+                zf.writestr(full_key, data)
+            except Exception as e:
+                # Log and continue
+                print(f"[zip] failed to fetch {full_key}: {e}")
+                continue
 
+    # Return ZIP via Response
+    zip_buffer.seek(0)
+    content = zip_buffer.getvalue()
+    return Response(
+        content=content,
+        media_type="application/zip",
+        headers={"Content-Disposition": 'attachment; filename="files.zip"'}
+    )
+
+    
 @file_router.get("/logs/{file_id}", tags=["logs"])
 def get_file_logs(file_id: str, db: Session = Depends(get_db)):
     """

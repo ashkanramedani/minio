@@ -1,6 +1,8 @@
 # app/services/file_service.py
 from sqlalchemy.orm import Session
 from models import FileModel, FileRequestLog
+from sqlalchemy.dialects.postgresql import UUID
+from typing import List
 
 def save_file_to_db(db: Session, bucket_name: str, file_name: str, file_type: str, file_size: float, public_url: str, version_id: str, user_id: str):
     new_file = FileModel(
@@ -29,3 +31,10 @@ def log_request(db: Session, file_id: str, ip_address: str, user_agent: str = No
     )
     db.add(new_request)
     db.commit()
+
+
+def get_files(db: Session, file_ids: List[UUID], bucket: str = None) -> List[FileModel]:
+    """
+    Retrieve FileModel instances from the database by their UUIDs.
+    """
+    return db.query(FileModel).filter(FileModel.id.in_(file_ids)).all()
