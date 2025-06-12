@@ -2,6 +2,7 @@ from io import BytesIO
 from minio.error import S3Error
 from dbs import minio_client
 
+
 allowed_extensions = [
     "jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "svg", "ico",  # Images
     "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v",          # Videos
@@ -160,4 +161,3 @@ def validate_file_types(file_extension: str) -> bool:
     if file_extension in allowed_extensions:
         return True
     return False
-    
