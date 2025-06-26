@@ -1,4 +1,4 @@
 # api/configs/__init__.py
 
-from .config import Settings, settings
+from .config import Settings, settings, allowed_extensions
 

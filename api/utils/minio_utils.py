@@ -1,21 +1,11 @@
 from io import BytesIO
 from minio.error import S3Error
 from dbs import minio_client
-
-
-allowed_extensions = [
-    "jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "svg", "ico",  # Images
-    "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v",          # Videos
-    "mp3", "wav", "aac", "flac", "ogg", "m4a", "wma", "aiff",         # Audio
-    "txt", "doc", "docx", "pdf", "odt", "rtf", "md",                 # Text Files
-    "xls", "xlsx", "csv", "ods", "ppt", "pptx", "odp",               # Spreadsheets & Presentations
-    "zip", "rar", "7z", "tar", "gz", "bz2", "xz"                    # Compressed
-    # "exe", "dll", "so", "bat", "sh", "py", "js", "html", "css",      # Executables & System Files
-    # "psd", "ai", "eps", "indd", "sketch", "obj", "stl", "fbx",       # Graphics & 3D Models
-    # "sql", "db", "sqlite", "json", "xml", "yaml", "parquet",         # Database & Data Files
-    # "java", "c", "cpp", "cs", "php", "rb", "go"                      # Programming Files
-]
-
+from configs import settings, allowed_extensions
+from starlette.status import HTTP_413_REQUEST_ENTITY_TOO_LARGE
+from fastapi import HTTPException
+from typing import List
+from fastapi import UploadFile
 
 def stream_minio_object(minio_response, buffer_size=1024 * 1024):  # 1 MB buffer
     for chunk in minio_response.stream(buffer_size):
@@ -47,6 +37,31 @@ def create_path_if_not_exists(bucket_name: str, folder_path: str):
     except S3Error as e:
         raise Exception(f"Failed to create path: {str(e)}")
 
+def validate_file_size(upload_file):
+    """
+    Validate the uploaded file size.
+    """
+    file_content = upload_file.file.read()
+    upload_file.file.seek(0)  # بازنشانی برای استفاده مجدد
+
+    if len(file_content) > settings.MAX_FILE_SIZE:
+        raise HTTPException(
+            status_code=HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"File '{upload_file.filename}' exceeds the maximum allowed size of {settings.MAX_FILE_SIZE // (1024 * 1024)} MB"
+        )
+
+def validate_total_size(files: List[UploadFile]):
+    total_size = 0
+    for file in files:
+        content = file.file.read()
+        file.file.seek(0)
+        total_size += len(content)
+    if total_size > settings.MAX_TOTAL_UPLOAD_SIZE:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Total uploaded files exceed the maximum allowed size of {settings.MAX_TOTAL_UPLOAD_SIZE // 1024 // 1024} MB"
+        )
+      
 def upload_file_to_minio(bucket_name: str, folder_path: str, file_name: str, file_content):
     try:        
         if not minio_client.bucket_exists(bucket_name):

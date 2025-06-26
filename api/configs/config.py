@@ -35,6 +35,8 @@ class Settings(BaseSettings):
     URL_PANEL: str = os.getenv("URL_PANEL")
     
     BASE_DOMAIN: str = "file.ieltsdaily.ir"
+    MAX_FILE_SIZE = 100 * 1024 * 1024 # 500MB
+    MAX_TOTAL_UPLOAD_SIZE = 500 * 1024 * 1024 # 500MB
 
     class Config:
         env_file = ".env"  # مشخص‌کردن نام فایل env
@@ -42,6 +44,14 @@ class Settings(BaseSettings):
 # ایجاد نمونه از تنظیمات
 settings = Settings()
 
+allowed_extensions = [
+    "jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "svg", "ico",  # Images
+    "mp4", "mkv", "avi", "mov", "wmv", "flv", "webm", "m4v",          # Videos
+    "mp3", "wav", "aac", "flac", "ogg", "m4a", "wma", "aiff",         # Audio
+    "txt", "doc", "docx", "pdf", "odt", "rtf", "md",                 # Text Files
+    "xls", "xlsx", "csv", "ods", "ppt", "pptx", "odp",               # Spreadsheets & Presentations
+    "zip", "rar", "7z", "tar", "gz", "bz2", "xz"                    # Compressed
+]
 
 
 

@@ -12,7 +12,8 @@ from utils import (
     human_readable_size,
     get,
     setex,
-    create_path_if_not_exists, 
+    validate_total_size,
+    validate_file_size,
     does_path_exist,
     stream_buffered,
     stream_minio_object
@@ -141,6 +142,8 @@ def upload_multiple_files(
     Upload multiple files to MinIO, save metadata in the database, and return upload results.
     """
     # Normalize and validate folder path
+    validate_total_size(files)
+
     folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=400, detail=f"Invalid folder path: '{folder_path}'")
@@ -249,6 +252,7 @@ def upload_file(
     """
     Upload the file to MinIO and save the information in the database.
     """
+    validate_file_size(file)
     
     folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
