@@ -1,7 +1,9 @@
-# app/routes/file_routes.py
+# api/routes/file_routes.py
+
 from fastapi import File, APIRouter, UploadFile, HTTPException, Depends, Request, Form, Response
 from sqlalchemy.orm import Session
 from dbs import get_db, minio_client
+from schemas import FileUploadResponse
 from typing import List, Optional
 from utils import (
     upload_file_to_minio,
@@ -24,6 +26,7 @@ from minio.versioningconfig import VersioningConfig
 from libs import logger
 import base64
 from uuid import UUID
+from configs import settings
 import json
 from mimetypes import guess_type
 from PIL import Image
@@ -125,7 +128,7 @@ def delete_path(bucket_name: str, folder_path: str):
 
 
 
-@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"], summary="Upload multiple files to MinIO and record metadata")
+@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"], summary="Upload multiple files to MinIO and record metadata", response_model=List[FileUploadResponse])
 def upload_multiple_files(
     bucket_name: str,
     folder_path: str,
@@ -192,7 +195,7 @@ def upload_multiple_files(
 
             # Construct public URL
             base = request.base_url if request else ""
-            public_url = f"{base}files/download/public-url/{bucket_name}/{new_file.id}?folder_path={folder_path}"
+            public_url = f"https://{settings.BASE_DOMAIN}/files/download/public-url/{bucket_name}/{new_file.id}?folder_path={folder_path}"
             if version_id:
                 public_url += f"&version_id={version_id}"
 
@@ -202,6 +205,11 @@ def upload_multiple_files(
             new_file.public_url = public_url
             new_file.version_id = version_id
             db.commit()
+            
+            public_url = f"https://{settings.BASE_DOMAIN}/files/download/public-url"
+
+            if new_file.id: 
+                public_url += f"/{new_file.id}"
 
             uploaded_files.append({
                 "file_id": str(new_file.id),
@@ -215,7 +223,7 @@ def upload_multiple_files(
                 "human_readable_size": human_readable_size(new_file.file_size),
                 "last_modified": new_file.created_at.isoformat(),
                 "etag": str(new_file.id),
-                "public_url": new_file.public_url
+                "public_url": public_url
             })
         except HTTPException:
             # Propagate HTTP errors
@@ -226,7 +234,7 @@ def upload_multiple_files(
 
     return {"message": "Files uploaded successfully", "uploaded_files": uploaded_files}
 
-@file_router.post("/upload/{bucket_name}/{folder_path:path}", tags=["upload"])
+@file_router.post("/upload/{bucket_name}/{folder_path:path}", tags=["upload"], response_model=FileUploadResponse)
 def upload_file(
     bucket_name: str,
     file: UploadFile,
@@ -350,7 +358,7 @@ def upload_file(
             
             file.file.seek(0)
 
-            public_url = f"https://file.ieltsdaily.ir/files/download/public-url"
+            public_url = f"https://{settings.BASE_DOMAIN}/files/download/public-url"
 
             if current_file_id: 
                 public_url += f"/{current_file_id}"

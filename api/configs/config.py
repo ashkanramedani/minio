@@ -34,6 +34,8 @@ class Settings(BaseSettings):
     URL_INVENTORY: str = os.getenv("URL_INVENTORY")
     URL_PANEL: str = os.getenv("URL_PANEL")
     
+    BASE_DOMAIN: str = "file.ieltsdaily.ir"
+
     class Config:
         env_file = ".env"  # مشخص‌کردن نام فایل env
 

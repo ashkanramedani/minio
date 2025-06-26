@@ -6,9 +6,6 @@ from libs import logger
 from dbs import Base, engine
 from configs import settings
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi_versioning import VersionedFastAPI, version
-from starlette.middleware import Middleware
-from starlette.middleware.sessions import SessionMiddleware
 
 # بررسی اتصال‌ها قبل از شروع برنامه
 try:

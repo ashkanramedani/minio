@@ -3,7 +3,7 @@ from contextlib import contextmanager
 from fastapi import Header, HTTPException
 
 # نام فایل پایگاه داده
-DB_NAME = "/app/config/apikeys.db"
+DB_NAME = "/api/config/apikeys.db"
 
 # مدیریت اتصال به دیتابیس
 @contextmanager
