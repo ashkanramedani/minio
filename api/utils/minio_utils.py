@@ -171,8 +171,33 @@ def human_readable_size(size_in_bytes):
         return f"{size_in_bytes / 1024 ** 2:.2f} MB"
     else:
         return f"{size_in_bytes / 1024 ** 3:.2f} GB"
+
+def folder_path_validat(folder_path: str):
+    if folder_path == "/":
+        return False
+    if folder_path and len(folder_path)>0 and folder_path[0] == "/":
+        return False
+    if folder_path and len(folder_path)>0 and folder_path[len(folder_path)-1] == "/":
+        return False
+    return True
+
+def convert_folder_path_to_validate_path(folder_path: str):
+    if folder_path == "/":
+        folder_path = ""
+    if folder_path and len(folder_path)>0 and folder_path[0] == "/":
+        folder_path = folder_path[1:]
+    if folder_path and len(folder_path)>0 and folder_path[len(folder_path)-1] == "/":
+        folder_path = folder_path[:-1]
+    return folder_path
+
+def validate_file_type(upload_file: UploadFile):
+    from pathlib import Path
+
+    file_extension = Path(upload_file.filename).suffix.lower().lstrip('.')
+
+    if file_extension not in allowed_extensions:
+        raise HTTPException(
+            status_code=400,
+            detail=f"File type '.{file_extension}' of file '{upload_file.filename}' is not allowed"
+        )
     
-def validate_file_types(file_extension: str) -> bool:
-    if file_extension in allowed_extensions:
-        return True
-    return False

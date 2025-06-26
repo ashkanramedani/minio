@@ -14,6 +14,9 @@ from utils import (
     setex,
     validate_total_size,
     validate_file_size,
+    validate_file_type,
+    folder_path_validat,
+    convert_folder_path_to_validate_path,
     does_path_exist,
     stream_buffered,
     stream_minio_object
@@ -27,7 +30,7 @@ from minio.versioningconfig import VersioningConfig
 from libs import logger
 import base64
 from uuid import UUID
-from configs import settings
+from configs import settings, ignoree_list_delete_object_bucket, ignoree_list_delete_bucket
 import json
 from mimetypes import guess_type
 from PIL import Image
@@ -36,37 +39,6 @@ from urllib.parse import quote
 from zipfile import ZipFile
 
 file_router = APIRouter(prefix="/files")
-
-ignoree_list_delete_bucket = [
-    "cdn",
-    "financial",
-    "ieltsdaily",
-    "products",
-    "tmp"
-]
-ignoree_list_delete_object_bucket = [
-    "products",
-    "images",
-    "cdn"
-]
-
-def folder_path_validat(folder_path: str):
-    if folder_path == "/":
-        return False
-    if folder_path and len(folder_path)>0 and folder_path[0] == "/":
-        return False
-    if folder_path and len(folder_path)>0 and folder_path[len(folder_path)-1] == "/":
-        return False
-    return True
-
-def convert_folder_path_to_validate_path(folder_path: str):
-    if folder_path == "/":
-        folder_path = ""
-    if folder_path and len(folder_path)>0 and folder_path[0] == "/":
-        folder_path = folder_path[1:]
-    if folder_path and len(folder_path)>0 and folder_path[len(folder_path)-1] == "/":
-        folder_path = folder_path[:-1]
-    return folder_path
 
 
 
@@ -157,9 +129,11 @@ def upload_multiple_files(
         raise HTTPException(status_code=404, detail=f"Path '{folder_path}' does not exist in bucket '{bucket_name}'")
 
     uploaded_files = []
+    skipped_files = []
 
     for upload in files:
         try:
+            validate_file_type(upload)
             filename = upload.filename
             # Determine extension and type
             extension = filename.rsplit('.', 1)[-1] if '.' in filename else None
@@ -228,14 +202,22 @@ def upload_multiple_files(
                 "etag": str(new_file.id) if new_file.id is not None else None,
                 "public_url": public_url
             })
-        except HTTPException:
+        except HTTPException as e:
             # Propagate HTTP errors
-            raise
+            skipped_files.append({
+                "filename": upload.filename,
+                "reason": e.detail
+            })
+            # raise
         except Exception as e:
             logger.error(f"Failed to upload {filename}: {e}")
             continue
-
-    return {"message": "Files uploaded successfully", "uploaded_files": uploaded_files}
+            
+    return FilesUploadResponse(
+            message="Files uploaded successfully",
+            uploaded_files=uploaded_files,
+            skipped_files=skipped_files  # ← لیست خالی اگر چیزی رد نشده
+        )
 
 @file_router.post("/upload/{bucket_name}/{folder_path:path}", tags=["upload"], response_model=FileUploadResponse)
 def upload_file(
@@ -253,7 +235,8 @@ def upload_file(
     Upload the file to MinIO and save the information in the database.
     """
     validate_file_size(file)
-    
+    validate_file_type(file)
+
     folder_path = convert_folder_path_to_validate_path(folder_path)
     if not folder_path_validat(folder_path) and folder_path != "":
         raise HTTPException(status_code=404, detail=f"folder path is not valid")   

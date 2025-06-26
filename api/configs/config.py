@@ -38,6 +38,9 @@ class Settings(BaseSettings):
     MAX_FILE_SIZE = 100 * 1024 * 1024 # 500MB
     MAX_TOTAL_UPLOAD_SIZE = 500 * 1024 * 1024 # 500MB
 
+    ADMIN_MAX_FILE_SIZE = 2048 * 1024 * 1024 # 2GB
+    ADMIN_MAX_TOTAL_UPLOAD_SIZE = 10240 * 1024 * 1024 # 10GB
+
     class Config:
         env_file = ".env"  # مشخص‌کردن نام فایل env
 
@@ -53,7 +56,18 @@ allowed_extensions = [
     "zip", "rar", "7z", "tar", "gz", "bz2", "xz"                    # Compressed
 ]
 
-
+ignoree_list_delete_bucket = [
+    "cdn",
+    "financial",
+    "ieltsdaily",
+    "products",
+    "tmp"
+]
+ignoree_list_delete_object_bucket = [
+    "products",
+    "images",
+    "cdn"
+]
 
 # MAJOR . MINOR . PATCH . EXTRA
 # 1. MAJOR (نسخه اصلی)

@@ -22,9 +22,14 @@ class FileUploadResponse(BaseModel):
         orm_mode = True
 
 
+class FileUploadSkipped(BaseModel):
+    filename: str = Field(..., description="Name of the file that was skipped")
+    reason: str = Field(..., description="Reason for skipping the file")
+
 class FilesUploadResponse(BaseModel):
     message: str = Field(..., description="Status message")
-    uploaded_files: List[FileUploadResponse] = Field(..., description="List of uploaded files")
-    
+    uploaded_files: List[FileUploadResponse] = Field(..., description="List of successfully uploaded files")
+    skipped_files: List[FileUploadSkipped] = Field(..., description="List of skipped files with reasons")
     class Config:
         orm_mode = True
+

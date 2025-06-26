@@ -13,9 +13,11 @@ from .minio_utils import (
     does_path_exist, 
     stream_buffered, 
     stream_minio_object,
-    validate_file_types,
+    validate_file_type,
     bucket_info,
     validate_total_size,
-    validate_file_size
+    validate_file_size,
+    folder_path_validat,    
+    convert_folder_path_to_validate_path
 )
 
