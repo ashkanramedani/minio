@@ -1,4 +1,4 @@
-# app/utils/__init__.py
+# api/utils/__init__.py
 
 from .remote_redis_client import get, setex, delete, update
 from .connection_checker import check_database_connection, check_minio_connection

@@ -1,4 +1,4 @@
-# app/routes/__init__.py
+# api/routes/__init__.py
 
 from .file_routes import (
     upload_file,
