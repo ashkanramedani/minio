@@ -10,7 +10,7 @@ services:
       - "${MINIO_PORT_WEBUI}:9001"
     environment:
       - MINIO_ROOT_USER=${MINIO_ROOT_USER}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}      
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.minio-db.rule=Host(`minio-db`)"
@@ -44,7 +44,8 @@ services:
       - "traefik.http.routers.minio-api.rule=Host(`minio-api`)"
       - "traefik.http.services.minio-api.loadbalancer.server.port=${API_PORT}"
     depends_on:
-      - minio
+      - minio-db
+      - redis-db
     volumes:
       - ./api:/app
     networks:
