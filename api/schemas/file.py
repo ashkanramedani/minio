@@ -1,7 +1,7 @@
 # api/schemas/file.py
 
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List
 from datetime import datetime
 
 class FileUploadResponse(BaseModel):
@@ -18,5 +18,13 @@ class FileUploadResponse(BaseModel):
     etag: str = Field(..., description="ETag or hash of the file")
     public_url: str = Field(..., description="Public URL to access the file")
 
+    class Config:
+        orm_mode = True
+
+
+class FilesUploadResponse(BaseModel):
+    message: str = Field(..., description="Status message")
+    uploaded_files: List[FileUploadResponse] = Field(..., description="List of uploaded files")
+    
     class Config:
         orm_mode = True

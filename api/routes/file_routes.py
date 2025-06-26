@@ -3,7 +3,7 @@
 from fastapi import File, APIRouter, UploadFile, HTTPException, Depends, Request, Form, Response
 from sqlalchemy.orm import Session
 from dbs import get_db, minio_client
-from schemas import FileUploadResponse
+from schemas import FileUploadResponse, FilesUploadResponse
 from typing import List, Optional
 from utils import (
     upload_file_to_minio,
@@ -128,7 +128,7 @@ def delete_path(bucket_name: str, folder_path: str):
 
 
 
-@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"], summary="Upload multiple files to MinIO and record metadata", response_model=List[FileUploadResponse])
+@file_router.post("/upload/multiple/{bucket_name}/{folder_path:path}", tags=["upload"], summary="Upload multiple files to MinIO and record metadata", response_model=FilesUploadResponse)
 def upload_multiple_files(
     bucket_name: str,
     folder_path: str,
@@ -222,7 +222,7 @@ def upload_multiple_files(
                 "version_id": new_file.version_id,
                 "human_readable_size": human_readable_size(new_file.file_size),
                 "last_modified": new_file.created_at.isoformat(),
-                "etag": str(new_file.id),
+                "etag": str(new_file.id) if new_file.id is not None else None,
                 "public_url": public_url
             })
         except HTTPException:
@@ -238,7 +238,6 @@ def upload_multiple_files(
 def upload_file(
     bucket_name: str,
     file: UploadFile,
-    request: Request,
     folder_path: str,
     format: str = None,
     width: int = None,
@@ -403,7 +402,7 @@ def upload_file(
                 "version_id": updated_file.version_id,
                 "human_readable_size": human_readable_size(updated_file.file_size),
                 "last_modified": updated_file.created_at.isoformat(),
-                "etag": updated_file.id,
+                "etag": str(updated_file.id) if updated_file.id is not None else None,
                 "public_url": public_url
             }
 

@@ -9,11 +9,11 @@ allowed_extensions = [
     "mp3", "wav", "aac", "flac", "ogg", "m4a", "wma", "aiff",         # Audio
     "txt", "doc", "docx", "pdf", "odt", "rtf", "md",                 # Text Files
     "xls", "xlsx", "csv", "ods", "ppt", "pptx", "odp",               # Spreadsheets & Presentations
-    "zip", "rar", "7z", "tar", "gz", "bz2", "xz",                    # Compressed
-    "exe", "dll", "so", "bat", "sh", "py", "js", "html", "css",      # Executables & System Files
-    "psd", "ai", "eps", "indd", "sketch", "obj", "stl", "fbx",       # Graphics & 3D Models
-    "sql", "db", "sqlite", "json", "xml", "yaml", "parquet",         # Database & Data Files
-    "java", "c", "cpp", "cs", "php", "rb", "go"                      # Programming Files
+    "zip", "rar", "7z", "tar", "gz", "bz2", "xz"                    # Compressed
+    # "exe", "dll", "so", "bat", "sh", "py", "js", "html", "css",      # Executables & System Files
+    # "psd", "ai", "eps", "indd", "sketch", "obj", "stl", "fbx",       # Graphics & 3D Models
+    # "sql", "db", "sqlite", "json", "xml", "yaml", "parquet",         # Database & Data Files
+    # "java", "c", "cpp", "cs", "php", "rb", "go"                      # Programming Files
 ]
 
 
