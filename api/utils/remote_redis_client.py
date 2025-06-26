@@ -1,4 +1,4 @@
-# app/utils/remote_redis_client.py
+# api/utils/remote_redis_client.py
 import httpx
 from fastapi import HTTPException
 from configs import settings

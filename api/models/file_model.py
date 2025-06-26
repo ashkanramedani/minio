@@ -1,4 +1,5 @@
-# app/models/file_model.py
+# api/models/file_model.py
+
 from sqlalchemy import Column, String, Integer, Float, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
